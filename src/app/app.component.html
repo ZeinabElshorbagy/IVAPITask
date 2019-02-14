@@ -1,0 +1,23 @@
+<div class="centerd">
+  <form>
+    <div class="form-group">
+      <input type="email" class="form-control" id="exampleInputEmail1"
+      aria-describedby="emailHelp" placeholder="Enter email" [(ngModel)] = "email" name="email">
+    </div>
+    <button type="submit" class="btn btn-primary center" (click) = "submit()">Submit</button>
+  </form>
+</div>
+
+<div *ngIf="response">
+  <div *ngIf="response.smtp_check" class="card card-position animate-if">
+    <div class="card-body">
+      this email is valid.
+    </div>
+  </div>
+
+  <div *ngIf="!response.smtp_check" class="card card-position animate-if">
+    <div class="card-body">
+      this email is NOT valid.
+    </div>
+  </div>
+</div>
